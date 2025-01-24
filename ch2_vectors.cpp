@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 
+
 template <typename T> int find_smallest(const std::vector<T>& arr) {
     T smallest = arr[0];
     int smallest_index = 0;
@@ -37,4 +38,7 @@ int main() {
         std::cout << num << ", ";
     }
     std::cout << std::endl;
+
+    return 0;
+
 }
