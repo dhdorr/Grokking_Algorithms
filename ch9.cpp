@@ -47,7 +47,7 @@ void dijkstra(std::unordered_map<std::string, std::unordered_map<std::string, in
         std::unordered_map<std::string, int> neighbors = graph.find(node)->second;
         for (auto n : neighbors) {
             int new_cost = cost + neighbors.find(n.first)->second;
-            
+
             if (costs.find(n.first)->second > new_cost) {
                 costs.find(n.first)->second = new_cost;
 
@@ -77,8 +77,6 @@ int main() {
 
     graph.insert({"fin", {}});
 
-    // dijkstra(graph);
-
     std::unordered_map<std::string, int> costs;
     costs.insert({"a", 6});
     costs.insert({"b", 2});
@@ -90,9 +88,6 @@ int main() {
     parents.insert({"fin", None});
 
     std::vector<std::string> processed;
-
-    // std::string node = find_lowest_cost_node(costs, processed);
-    // std::cout << "lowest cost node: " << node << std::endl;
 
     dijkstra(graph, costs, parents, processed);
 
